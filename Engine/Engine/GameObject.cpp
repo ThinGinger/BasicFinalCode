@@ -23,7 +23,8 @@ namespace scene
 	}
 	void GameObject::update ()
 	{
-
+		transform.x += xSpeed;
+		transform.y += ySpeed;
 	}
 	void GameObject::draw () const
 	{

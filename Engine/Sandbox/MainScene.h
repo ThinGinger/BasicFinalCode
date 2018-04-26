@@ -1,6 +1,7 @@
 #pragma once
 #include <Scene.h>
 #include "Player.h"
+#include "Bullet.h"
 
 namespace core
 {
@@ -10,7 +11,6 @@ namespace core
 class MainScene : public scene::Scene
 {
 	Player player;
-
 	core::InputSystem* inputSystem;
 
 public:
@@ -21,5 +21,6 @@ public:
 	void update () override;
 	void draw () const override;
 	bool shutdown () override;
-};
 
+	Bullet bullet;
+};

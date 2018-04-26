@@ -40,6 +40,9 @@ namespace core
 				case SDLK_DOWN:
 					m_downPressed = true;
 					break;
+				case SDLK_SPACE:
+					m_spacePressed = true;
+					break;
 				}
 				break;
 			case SDL_KEYUP:
@@ -56,6 +59,9 @@ namespace core
 					break;
 				case SDLK_DOWN:
 					m_downPressed = false;
+					break;
+				case SDLK_SPACE:
+					m_spacePressed = true;
 					break;
 				}
 				break;

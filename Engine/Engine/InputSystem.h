@@ -11,6 +11,7 @@ namespace core
 		bool m_rightPressed = false;
 		bool m_upPressed = false;
 		bool m_downPressed = false;
+		bool m_spacePressed = false;
 
 	public:
 		InputSystem ();
@@ -22,6 +23,7 @@ namespace core
 		inline bool IsRightPressed () const { return m_rightPressed; }
 		inline bool IsUpPressed () const { return m_upPressed; }
 		inline bool IsDownPressed () const { return m_downPressed; }
+		inline bool IsSpacePressed() const { return m_spacePressed; }
 
 		inline bool QuitResquested () const { return quitResquested; }
 	};

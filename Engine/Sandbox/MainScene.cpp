@@ -5,11 +5,12 @@
 #include <InputSystem.h>
 #include <iostream>
 #include "Player.h"
+#include "Bullet.h"
 #include <SDL.h>
 
-MainScene::MainScene () :
-	player("player.bmp")
+MainScene::MainScene () : player("player.bmp")
 {
+
 }
 
 
@@ -24,15 +25,14 @@ bool MainScene::init ()
 	return true;
 }
 
-void MainScene::update ()
+void MainScene::update()
 {
-	if (inputSystem->IsLeftPressed ())
+	//player movement
+	if (inputSystem->IsLeftPressed())
 		player.transform.x -= 1;
 
-	if (inputSystem->IsRightPressed ())
+	if (inputSystem->IsRightPressed())
 		player.transform.x += 1;
-
-	// TODO check for up and down
 
 	if (inputSystem->IsDownPressed())
 		player.transform.y += 1;
@@ -40,11 +40,14 @@ void MainScene::update ()
 	if (inputSystem->IsUpPressed())
 		player.transform.y -= 1;
 
+	Bullet bullet("bullet.bmp", player.transform.x, player.transform.y);
+
 	
 	// draw the player
 	SDL_Surface *windowSurface = engine->getSurface ();
 	// notice the function to draw the player scaled down
 	SDL_BlitSurface (player.objectImage, NULL, windowSurface, &player.transform);
+	SDL_BlitSurface(bullet.objectImage, NULL, windowSurface, &bullet.transform);
 }
 
 void MainScene::draw () const

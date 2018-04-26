@@ -8,6 +8,9 @@ namespace scene
 	public:
 		SDL_Rect transform;
 		SDL_Surface* objectImage;
+		int xSpeed;
+		int ySpeed;
+		GameObject();
 
 		GameObject (std::string filePath);
 		virtual ~GameObject ();
