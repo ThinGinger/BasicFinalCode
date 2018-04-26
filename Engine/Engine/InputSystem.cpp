@@ -34,6 +34,12 @@ namespace core
 				case SDLK_RIGHT:
 					m_rightPressed = true;
 					break;
+				case SDLK_UP:
+					m_upPressed = true;
+					break;
+				case SDLK_DOWN:
+					m_downPressed = true;
+					break;
 				}
 				break;
 			case SDL_KEYUP:
@@ -44,6 +50,12 @@ namespace core
 					break;
 				case SDLK_RIGHT:
 					m_rightPressed = false;
+					break;
+				case SDLK_UP:
+					m_upPressed = false;
+					break;
+				case SDLK_DOWN:
+					m_downPressed = false;
 					break;
 				}
 				break;

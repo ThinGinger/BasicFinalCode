@@ -1,7 +1,6 @@
 #include "Player.h"
 
-Player::Player (std::string path) :
-	GameObject(path)
+Player::Player (std::string path) : GameObject(path)
 {
 	transform.y = 10;
 	transform.x = 10;

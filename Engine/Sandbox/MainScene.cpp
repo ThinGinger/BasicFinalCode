@@ -34,6 +34,12 @@ void MainScene::update ()
 
 	// TODO check for up and down
 
+	if (inputSystem->IsDownPressed())
+		player.transform.y += 1;
+
+	if (inputSystem->IsUpPressed())
+		player.transform.y -= 1;
+
 	
 	// draw the player
 	SDL_Surface *windowSurface = engine->getSurface ();
