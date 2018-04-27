@@ -4,11 +4,9 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MainScene.cpp" />
     <ClCompile Include="Player.cpp" />
-    <ClCompile Include="Bullet.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MainScene.h" />
     <ClInclude Include="Player.h" />
-    <ClInclude Include="Bullet.h" />
   </ItemGroup>
 </Project>

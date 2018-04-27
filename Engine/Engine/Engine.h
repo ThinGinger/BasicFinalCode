@@ -37,6 +37,7 @@ namespace core
 
 		core::InputSystem* inputSystem;
 
+
 	public:
 		Engine (scene::Scene *s);
 		~Engine ();

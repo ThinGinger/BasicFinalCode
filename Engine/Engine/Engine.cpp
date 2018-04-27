@@ -2,6 +2,10 @@
 #include "Scene.h"
 #include <iostream>
 
+SDL_Surface* screenSurface = NULL;
+SDL_Surface * image = NULL;
+SDL_Rect *ImageRect = new SDL_Rect;
+
 namespace core
 {
 	Engine::Engine (scene::Scene* s) :
@@ -37,6 +41,7 @@ namespace core
 		}
 		else
 		{
+			image = SDL_LoadBMP("Background.bmp");
 			//Create window
 			window = SDL_CreateWindow ("SDL Tutorial", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_SHOWN);
 			if (window == NULL)
@@ -97,6 +102,8 @@ namespace core
 		mainScene->draw ();
 		//Fill the surface white
 		SDL_FillRect (screenSurface, NULL, SDL_MapRGB (screenSurface->format, 0xFF, 0xFF, 0xFF));
+		SDL_BlitSurface(image, NULL, screenSurface, NULL);
+
 	}
 
 	int Engine::shutdown ()

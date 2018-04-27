@@ -5,7 +5,6 @@
 #include <InputSystem.h>
 #include <iostream>
 #include "Player.h"
-#include "Bullet.h"
 #include <SDL.h>
 
 MainScene::MainScene () : player("player.bmp")
@@ -40,14 +39,11 @@ void MainScene::update()
 	if (inputSystem->IsUpPressed())
 		player.transform.y -= 1;
 
-	Bullet bullet("bullet.bmp", player.transform.x, player.transform.y);
-
 	
 	// draw the player
 	SDL_Surface *windowSurface = engine->getSurface ();
 	// notice the function to draw the player scaled down
-	SDL_BlitSurface (player.objectImage, NULL, windowSurface, &player.transform);
-	SDL_BlitSurface(bullet.objectImage, NULL, windowSurface, &bullet.transform);
+	SDL_BlitSurface(player.objectImage, NULL, windowSurface, &player.transform);
 }
 
 void MainScene::draw () const
